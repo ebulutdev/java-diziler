@@ -1,0 +1,156 @@
+### Java Dizi Konuları Sınav Soruları ve Çözümleri
+
+#### 1. Dizi İçinde Eleman Arama
+**Soru:** Bir tam sayı dizisi verildiğinde, kullanıcının girdiği bir sayının dizide bulunup bulunmadığını kontrol eden bir Java programı yazınız.
+
+**Çözüm:**
+Bu soruda bir tam sayı dizisi oluşturulmalı ve kullanıcıdan bir sayı alınmalıdır. Daha sonra, döngü ile dizide arama yapılır ve sayı bulunursa ekrana uygun bir mesaj yazdırılır.
+
+```java
+import java.util.Scanner;
+
+public class DiziArama {
+    public static void main(String[] args) {
+        int[] numbers = {10, 25, 30, 45, 50};
+        Scanner input = new Scanner(System.in);
+        System.out.print("Aramak istediğiniz sayıyı giriniz: ");
+        int search = input.nextInt();
+        boolean found = false;
+
+        for (int number : numbers) {
+            if (number == search) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            System.out.println("Sayı dizide bulundu.");
+        } else {
+            System.out.println("Sayı dizide bulunamadı.");
+        }
+    }
+}
+```
+
+#### Açıklama:
+- Bir dizi tanımlanır ve içindeki sayılar belirlenir.
+- Kullanıcıdan aramak istediği sayı alınır.
+- Bir döngü ile dizi taranır ve eşleşme bulunursa işlem sonlandırılır.
+
+---
+
+#### 2. Dizide Maksimum ve Minimum Değer Bulma
+**Soru:** Bir tamsayı dizisinin en büyük ve en küçük elemanını bulan bir Java programı yazınız.
+
+**Çözüm:**
+Bu soruda dizideki en büyük ve en küçük değeri bulmak için bir döngü kullanacağız. Döngüde her eleman kontrol edilerek güncelleme yapılacak.
+
+```java
+public class DiziMaxMin {
+    public static void main(String[] args) {
+        int[] numbers = {34, 67, 2, 89, 45, 1};
+        int max = numbers[0];
+        int min = numbers[0];
+
+        for (int number : numbers) {
+            if (number > max) {
+                max = number;
+            }
+            if (number < min) {
+                min = number;
+            }
+        }
+
+        System.out.println("En büyük değer: " + max);
+        System.out.println("En küçük değer: " + min);
+    }
+}
+```
+
+#### Açıklama:
+- Dizideki ilk eleman maksimum ve minimum olarak atanır.
+- Döngü ile tüm elemanlar kontrol edilerek güncelleme yapılır.
+- Sonuç olarak en büyük ve en küçük değer ekrana yazdırılır.
+
+---
+
+#### 3. Çok Boyutlu Dizi Kullanımı
+**Soru:** 3x3 boyutunda bir matris oluşturan ve bu matrisi ekrana yazdıran bir Java programı yazınız.
+
+**Çözüm:**
+Bu soruda çok boyutlu bir dizi oluşturulacak ve döngüler yardımıyla ekrana yazdırılacaktır.
+
+```java
+public class CokBoyutluDizi {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+#### Açıklama:
+- Çok boyutlu bir dizi tanımlanır ve matris değerleri atanır.
+- İç içe döngü kullanılarak matrisin satır ve sütunları sırayla yazdırılır.
+- Her satır sonunda yeni bir satıra geçilir.
+
+---
+
+#### 4. Dizi Elemanlarını Ekrana Yazdırma
+**Soru:** Bir dizideki tüm elemanları ekrana yazdıran bir Java programı yazınız.
+
+**Çözüm:**
+Dizi elemanlarını yazdırmak için bir döngü kullanacağız.
+
+```java
+public class DiziYazdirma {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+    }
+}
+```
+
+#### Açıklama:
+- Dizi tanımlanır ve elemanlar döngü ile ekrana yazdırılır.
+
+---
+
+#### 5. Diziyi Ters Çevirme
+**Soru:** Verilen bir diziyi ters çevirip ekrana yazdıran bir Java programı yazınız.
+
+**Çözüm:**
+Diziyi ters çevirmek için son elemandan başlayarak ilk elemana doğru yazdıracağız.
+
+```java
+public class DiziTersCevirme {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
+        }
+    }
+}
+```
+
+#### Açıklama:
+- Dizinin son elemanından başlayarak ilk elemana kadar döngü kullanılır.
+- Ters sırada yazdırılır.
+
+---
+
